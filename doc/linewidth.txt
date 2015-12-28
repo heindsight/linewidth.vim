@@ -1,0 +1,95 @@
+*linewidth.vim*	Highlight lines that are too long
+
+==============================================================================
+CONTENTS				*linewidth* *linewidth-contents*
+
+	INSTALLATION..........................: |linewidth-installation|
+	COMMANDS..............................: |linewidth-commands|
+	CUSTOMISING...........................: |linewidth-customising|
+	ABOUT.................................: |linewidth-about|
+	LICENSE...............................: |linewidth-license|
+
+==============================================================================
+INSTALLATION				*linewidth-installation*
+
+You can use your favourite installation method. With Tim Pope's pathogen
+(https://github.com/tpope/vim-pathogen) it is simply a question of cloning the
+linewidth.vim repository into your vim bundle directory.
+>
+	cd ~/.vim/bundle
+	git clone git://github.com/heindsight/linewidth.vim
+<
+
+==============================================================================
+COMMANDS				*linewidth-commands*
+
+:LinewidthHighlight			*:LinewidthHighlight*
+	Toggle highlighting of lines that are too long. Any text between
+	virtual column |g:linewidth_warn_width| (default: 72) and virtual
+	column |g:linewidth_error_width| (default: 79) is highlighted using
+	the |LineWidthWarning| highlight group. Any text after virtual column
+	|g:linewidth_error_width| is highlighted using the |LineWidthError|
+	highlight group.
+
+==============================================================================
+CUSTOMISING				*linewidth-customising*
+
+					*LineWidthWarning* *LineWidthError*
+LineWidthWarning
+LineWidthError
+	By default, the LineWidthWarning and LineWidthError highlight groups
+	are linked to the standard Todo and Error groups respectively (see
+	|group-name|). The |:highlight| command can be used to customize
+	highlighting. For example:
+>
+		highlight LineWidthWarning ctermfg=black ctermbg=Yellow
+		highlight LineWidthError ctermfg=White ctermbg=Red
+<
+
+					*g:linewidth_warn_width*
+					*g:linewidth_error_width*
+g:linewidth_warn_width	number (default 72)
+g:linewidth_error_width	number (default 79)
+	The line-lengths at which highlighting is applied can be customised
+	by setting the variables "g:linewidth_warn_width" and
+	"g:linewidth_error_width". Eg:
+>
+		let g:linewidth_warn_width = 95
+		let g:linewidth_error_width = 100
+<
+	Note: Changing the values of these variables will not take effect
+	immediately if highlighting is active. Line width highlighting needs
+	to be turned off and on again for new values to take effect.
+
+==============================================================================
+ABOUT					*linewidth-about*
+
+You can always get the latest version on GitHub. Bug reports, suggestions and
+pull requests are welcome!
+
+http://github.com/heindsight/linewidth.vim
+
+==============================================================================
+LICENSE					*linewidth-license*
+
+Copyright (c) 2015 Heinrich Kruger
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+vim:tw=78:ts=8:ft=help:norl:
