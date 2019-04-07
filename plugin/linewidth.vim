@@ -1,5 +1,5 @@
 " File: linewidth.vim
-" Copyright (c) 2015, Heinrich Kruger (heindsight@gmail.com)
+" Copyright (c) 2015, Heinrich Kruger (heindsight@kruger.dev)
 " Distributed under the MIT license (see ../LICENSE)
 
 if exists('g:loaded_linewidth')
